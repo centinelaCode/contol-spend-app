@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import {
+  BrowserRouter,
+  Routes,
+  Route,  
+} from 'react-router-dom'
 import WebFont from 'webfontloader'
 
-import Container from './elements/Container'
+
+import './index.css';
+import App from './App';
+import { 
+  Login,
+  Register,
+  SpensesList,
+  SpensesByCategory,
+  EditSpense, 
+} from './components'
+import { 
+  Container
+} from './elements'
 
 
 WebFont.load({
@@ -16,9 +31,18 @@ WebFont.load({
 
 const Index = () => {
   return (
-    <Container>
-      <App />
-    </Container>
+    <BrowserRouter>      
+      <Container>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/create-account" element={<Register />} />
+          <Route path="/categories" element={<SpensesByCategory />} />
+          <Route path="/list" element={<SpensesList />} />
+          <Route path="/edit/:id" element={<EditSpense />} />
+          <Route path="/" element={<App />} />
+        </Routes>
+      </Container>    
+    </BrowserRouter>
   )
 }
 
