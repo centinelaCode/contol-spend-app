@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import WebFont from 'webfontloader'
 
+import Container from './elements/Container'
+
+
 WebFont.load({
   google: {
     // Work+Sans:wght@400;500;700
@@ -13,7 +16,9 @@ WebFont.load({
 
 const Index = () => {
   return (
-    <App />
+    <Container>
+      <App />
+    </Container>
   )
 }
 
