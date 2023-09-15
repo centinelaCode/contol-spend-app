@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+export const Container = styled.div`
    background: #fff;
    width: 90%;
    max-width: 70rem; /*1110px*/
@@ -21,5 +21,3 @@ const Container = styled.div`
       max-height: none;
    }
 `;
-
-export default Container;
