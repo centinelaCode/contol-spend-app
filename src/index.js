@@ -6,9 +6,11 @@ import {
   Route,  
 } from 'react-router-dom'
 import WebFont from 'webfontloader'
+import {Helmet} from 'react-helmet'
 
 
 import './index.css';
+import favicon from './images/logo.png'
 import App from './App';
 import { 
   Login,
@@ -31,18 +33,25 @@ WebFont.load({
 
 const Index = () => {
   return (
-    <BrowserRouter>      
-      <Container>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/create-account" element={<Register />} />
-          <Route path="/categories" element={<SpensesByCategory />} />
-          <Route path="/list" element={<SpensesList />} />
-          <Route path="/edit/:id" element={<EditSpense />} />
-          <Route path="/" element={<App />} />
-        </Routes>
-      </Container>    
-    </BrowserRouter>
+    <>
+      <Helmet>
+        <link rel="shortcut icon" href={favicon} type="image/x-icon" />
+      </Helmet>
+      
+      <BrowserRouter>      
+        <Container>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/create-account" element={<Register />} />
+            <Route path="/categories" element={<SpensesByCategory />} />
+            <Route path="/list" element={<SpensesList />} />
+            <Route path="/edit/:id" element={<EditSpense />} />
+            <Route path="/" element={<App />} />
+          </Routes>
+        </Container>    
+      </BrowserRouter>
+    </>
+    
   )
 }
 
