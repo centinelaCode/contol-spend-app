@@ -20,7 +20,8 @@ import {
   EditSpense, 
 } from './components'
 import { 
-  Container
+  Container,
+  Fondo,
 } from './elements'
 
 
@@ -37,7 +38,7 @@ const Index = () => {
       <Helmet>
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
-      
+
       <BrowserRouter>      
         <Container>
           <Routes>
@@ -50,6 +51,8 @@ const Index = () => {
           </Routes>
         </Container>    
       </BrowserRouter>
+
+      <Fondo />
     </>
     
   )
